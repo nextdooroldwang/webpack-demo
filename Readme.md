@@ -8,6 +8,7 @@
 ## 手动配置webpack
 - demo2 (bundle构建依赖图，代码解析)
 - demo3 (使用webpack-dev-server开启基于express的开发服务)
+   
    `yarn add webpack-dev-server -D`
    在package.json中配置`"dev": "webpack-dev-server"`
    `yarn dev`
