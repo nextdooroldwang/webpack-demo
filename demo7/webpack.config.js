@@ -11,7 +11,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const uglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
-	mode: 'production', //production 或者 development
+	mode: 'development', //production 或者 development
 	entry: './src/index.js',
 	output: {
 		filename: 'bundle.js',
@@ -43,6 +43,24 @@ module.exports = {
 			//规则
 			//loader特点：功能单一,可用一个数组匹配多个loader
 			//执行顺序是从后往前
+			{
+				test: /\.js$/,
+				include: [path.resolve(__dirname, 'src')],
+				use: [
+					{
+						loader: 'babel-loader',
+						options: {
+							presets: ['@babel/preset-env'], //预设，一个大插件的集合
+							plugins: [
+								['@babel/plugin-proposal-decorators', { legacy: true }], //装饰器语法扩展
+								['@babel/plugin-proposal-class-properties', { loose: true }], //class提案扩展
+								'@babel/plugin-transform-runtime'
+							]
+						}
+					}
+				],
+				include: [path.resolve(__dirname, 'src')]
+			},
 			{
 				test: /\.css$/,
 				include: [path.resolve(__dirname, 'src')],
