@@ -4,12 +4,17 @@
 	"main": "index.js",
 	"license": "MIT",
 	"scripts": {
-		"build": "webpack --config webpack.config.p.js",
+		"build": "webpack --config webpack.config.react.js",
 		"dev": "webpack-dev-server"
 	},
 	"dependencies": {
 		"@babel/polyfill": "^7.4.4",
-		"@babel/runtime": "^7.4.4"
+		"@babel/runtime": "^7.4.4",
+		"happypack": "^5.0.1",
+		"jquery": "^3.4.1",
+		"moment": "^2.24.0",
+		"react": "^16.8.6",
+		"react-dom": "^16.8.6"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.4.4",
@@ -17,6 +22,7 @@
 		"@babel/plugin-proposal-decorators": "^7.4.4",
 		"@babel/plugin-transform-runtime": "^7.4.4",
 		"@babel/preset-env": "^7.4.4",
+		"@babel/preset-react": "^7.0.0",
 		"autoprefixer": "^9.5.1",
 		"babel-loader": "^8.0.5",
 		"clean-webpack-plugin": "^2.0.2",
